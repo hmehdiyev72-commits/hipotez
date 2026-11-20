@@ -1,4 +1,671 @@
 <!DOCTYPE html>
+<header>
+  <div class="logo">
+    <div class="logo-mark">π</div>
+    HIPOTEZ
+  </div>
+
+  <nav>
+    <a onclick="showPage('home')">Главная</a>
+    <a onclick="showPage('topics')">Темы</a>
+    <a onclick="showPage('student')">Ученик</a>
+    <a onclick="showPage('teacher')">Учитель</a>
+  </nav>
+
+  <div class="header-actions">
+    <select class="lang" id="language" onchange="changeLanguage()">
+      <option value="ru">RU</option>
+      <option value="az">AZ</option>
+    </select>
+    <button class="btn btn-orange" onclick="openLogin()">Войти</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ГЛАВНАЯ -->
+<section id="home" class="page">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Образование нового поколения</div>
+      <h1>Математика становится <span>понятнее.</span></h1>
+      <p>
+        Учись, решай задачи, проходи тесты и следи за своим прогрессом.
+        HIPOTEZ — твой путь к новым знаниям.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-orange" onclick="showPage('topics')">
+          Начать обучение →
+        </button>
+        <button class="btn btn-outline" onclick="openLogin()">
+          Мой аккаунт
+        </button>
+      </div>
+    </div>
+    <div class="hero-art">∑</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">📚</div>
+      <div>
+        <strong>3</strong>
+        <small>Уровня сложности</small>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div>
+        <strong>∞</strong>
+        <small>Возможностей учиться</small>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏆</div>
+      <div>
+        <strong>100%</strong>
+        <small>Твой потенциал</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <div>
+      <h2>Начни своё обучение</h2>
+      <p>Выбери тему и двигайся вперёд.</p>
+    </div>
+    <button class="btn btn-light" onclick="showPage('topics')">
+      Все темы →
+    </button>
+  </div>
+
+  <div class="topics">
+    <div class="topic-card">
+      <div class="topic-icon">➗</div>
+      <h3>Алгебра</h3>
+      <p>Выражения, уравнения и математические задачи.</p>
+      <button class="btn btn-orange" onclick="showPage('topics')">Открыть</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">📐</div>
+      <h3>Геометрия</h3>
+      <p>Фигуры, углы, площади и геометрические задачи.</p>
+      <button class="btn btn-orange" onclick="showPage('topics')">Открыть</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">√</div>
+      <h3>Числа и формулы</h3>
+      <p>Числовые выражения и основные математические правила.</p>
+      <button class="btn btn-orange" onclick="showPage('topics')">Открыть</button>
+    </div>
+  </div>
+</section>
+
+<!-- ТЕМЫ -->
+<section id="topics" class="page hidden">
+  <div class="section-head">
+    <div>
+      <h2>Математические темы</h2>
+      <p>Выбери тему и уровень сложности.</p>
+    </div>
+    <button class="btn btn-light" onclick="showPage('home')">← Назад</button>
+  </div>
+
+  <div class="topics">
+    <div class="topic-card">
+      <div class="topic-icon">➗</div>
+      <h3>Алгебра</h3>
+      <p>Изучай алгебраические выражения и уравнения.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Алгебра')">Выбрать тему</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">📐</div>
+      <h3>Геометрия</h3>
+      <p>Работай с фигурами, углами и площадями.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Геометрия')">Выбрать тему</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">√</div>
+      <h3>Корни и степени</h3>
+      <p>Осваивай степени, корни и их свойства.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Корни и степени')">Выбрать тему</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">%</div>
+      <h3>Проценты</h3>
+      <p>Решай задачи на проценты и пропорции.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Проценты')">Выбрать тему</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">∑</div>
+      <h3>Множества</h3>
+      <p>Изучай множества и операции над ними.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Множества')">Выбрать тему</button>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-icon">ƒ</div>
+      <h3>Функции</h3>
+      <p>Графики, функции и их свойства.</p>
+      <div class="levels">
+        <div class="level">1 · Лёгкий</div>
+        <div class="level">2 · Средний</div>
+        <div class="level">3 · Сложный</div>
+      </div>
+      <button class="btn btn-orange" onclick="openTopic('Функции')">Выбрать тему</button>
+    </div>
+  </div>
+
+  <div class="panel hidden" id="topic-detail">
+    <button class="btn btn-light" onclick="closeTopic()">← Назад к темам</button>
+    <h2 id="topic-title">Тема</h2>
+    <p>Выбери сложность заданий:</p>
+    <div class="levels">
+      <button class="btn btn-light" onclick="selectLevel(1)">1 · Лёгкий</button>
+      <button class="btn btn-orange" onclick="selectLevel(2)">2 · Средний</button>
+      <button class="btn btn-navy" onclick="selectLevel(3)">3 · Сложный</button>
+    </div>
+    <p id="level-message">Выбери уровень, чтобы продолжить.</p>
+  </div>
+</section>
+
+<!-- КАБИНЕТ УЧЕНИКА -->
+<section id="student" class="page hidden">
+  <div class="section-head">
+    <div>
+      <h2>Кабинет ученика</h2>
+      <p>Твоё обучение и результаты.</p>
+    </div>
+    <span class="badge">Ученик</span>
+  </div>
+
+  <div class="dashboard-grid">
+    <aside class="sidebar">
+      <h3>Мой кабинет</h3>
+      <button class="active">📊 Обзор</button>
+      <button onclick="showPage('topics')">📚 Мои темы</button>
+      <button>📝 Мои задания</button>
+      <button>🏆 Результаты</button>
+      <button onclick="openAccount()">👤 Аккаунт</button>
+    </aside>
+
+    <div class="content">
+      <div class="panel">
+        <h2>Добро пожаловать!</h2>
+        <p>Здесь будут отображаться твои учебные достижения.</p>
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div><strong>0</strong><small>Заданий</small></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div><strong>0</strong><small>Выполнено</small></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div><strong>0%</strong><small>Успеваемость</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Мои задания</h3>
+        <p>Пока нет назначенных заданий.</p>
+        <button class="btn btn-orange" onclick="showPage('topics')">Перейти к темам</button>
+      </div>
+
+      <div class="panel">
+        <h3>Мой прогресс</h3>
+        <p>Общий прогресс обучения</p>
+        <div class="progress"><span style="width:0%"></span></div>
+        <small>0% завершено</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАБИНЕТ УЧИТЕЛЯ -->
+<section id="teacher" class="page hidden">
+  <div class="section-head">
+    <div>
+      <h2>Панель учителя</h2>
+      <p>Управляй учениками и учебными заданиями.</p>
+    </div>
+    <span class="badge">Учитель</span>
+  </div>
+
+  <div class="dashboard-grid">
+    <aside class="sidebar">
+      <h3>Управление</h3>
+      <button class="active">📊 Обзор</button>
+      <button onclick="showTeacherTab('students')">👥 Ученики</button>
+      <button onclick="showTeacherTab('assignments')">📝 Задания</button>
+      <button onclick="showTeacherTab('tests')">📚 Тесты</button>
+      <button onclick="openAccount()">👤 Аккаунт</button>
+    </aside>
+
+    <div class="content">
+      <div class="panel" id="teacher-overview">
+        <h2>Рабочее пространство</h2>
+        <p>Следи за учебным процессом своих учеников.</p>
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div><strong>0</strong><small>Учеников</small></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📝</div>
+            <div><strong>0</strong><small>Заданий</small></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📈</div>
+            <div><strong>0%</strong><small>Средний результат</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="teacher-students">
+        <h3>Мои ученики</h3>
+        <button class="btn btn-orange" onclick="notify('В реальной версии здесь будет создание аккаунта ученика.')">
+          + Добавить ученика
+        </button>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Ученик</th><th>Логин</th><th>Прогресс</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Пока нет учеников</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="teacher-assignments">
+        <h3>Назначение заданий</h3>
+        <label>Выбери тему</label>
+        <select>
+          <option>Алгебра</option>
+          <option>Геометрия</option>
+          <option>Проценты</option>
+        </select>
+        <label>Уровень сложности</label>
+        <select>
+          <option>1 — Лёгкий</option>
+          <option>2 — Средний</option>
+          <option>3 — Сложный</option>
+        </select>
+        <label>Ученик</label>
+        <select><option>Выбрать ученика</option></select>
+        <button class="btn btn-orange" onclick="notify('Демонстрация: задание готово к назначению.')">
+          Назначить задание
+        </button>
+      </div>
+
+      <div class="panel hidden" id="teacher-tests">
+        <h3>Управление тестами</h3>
+        <p>Создавай тесты и управляй вопросами.</p>
+        <button class="btn btn-orange" onclick="notify('В реальной версии здесь будет редактор тестов.')">
+          + Создать тест
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- АККАУНТ -->
+<section id="account" class="page hidden">
+  <div class="section-head">
+    <div>
+      <h2>Информация об аккаунте</h2>
+      <p>Данные текущего пользователя.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="stat-icon">👤</div>
+    <h2 id="account-name">Демонстрационный пользователь</h2>
+    <p id="account-role">Роль: не авторизован</p>
+    <p id="account-login">Логин: —</p>
+    <button class="btn btn-light" onclick="showPage('home')">Назад</button>
+    <button class="btn btn-orange" onclick="logout()">Выйти из аккаунта</button>
+  </div>
+</section>
+
+<!-- ТЕСТ -->
+<section id="quiz" class="page hidden">
+  <div class="section-head">
+    <div>
+      <h2>Тренировочный тест</h2>
+      <p>Демонстрационный пример вопроса.</p>
+    </div>
+    <span class="badge" id="quiz-level">Уровень 1</span>
+  </div>
+
+  <div class="panel">
+    <p id="quiz-topic">Алгебра</p>
+    <h2>Сколько будет 5 + 7?</h2>
+    <button class="quiz-option" onclick="chooseAnswer(this)">A. 10</button>
+    <button class="quiz-option" onclick="chooseAnswer(this)">B. 12</button>
+    <button class="quiz-option" onclick="chooseAnswer(this)">C. 13</button>
+    <button class="quiz-option" onclick="chooseAnswer(this)">D. 15</button>
+    <button class="btn btn-orange" onclick="checkAnswer()">Проверить ответ</button>
+    <p id="quiz-result"></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ОКНО ВХОДА -->
+<div class="modal-bg" id="login-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+    <div class="logo" style="color:#10294b;margin-bottom:20px">
+      <div class="logo-mark">π</div>
+      HIPOTEZ
+    </div>
+    <h2>Вход в аккаунт</h2>
+    <p>Введи данные своего аккаунта.</p>
+    <label>Логин</label>
+    <input id="login-input" placeholder="Твой логин">
+    <label>Пароль</label>
+    <input id="password-input" type="password" placeholder="Твой пароль">
+    <button class="btn btn-orange" style="width:100%" onclick="demoLogin()">
+      Войти
+    </button>
+    <p style="font-size:12px;color:#718096">
+      Демонстрационный макет. Настоящая авторизация будет подключена отдельно.
+    </p>
+  </div>
+</div>
+
+<!-- УВЕДОМЛЕНИЯ -->
+<div class="toast" id="toast"></div>
+
+<script>
+let currentUser = null;
+let selectedAnswer = null;
+let currentTopic = "Алгебра";
+let currentLevel = 1;
+
+function showPage(pageId) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.add("hidden");
+  });
+
+  const page = document.getElementById(pageId);
+  if (page) page.classList.remove("hidden");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function notify(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2800);
+}
+
+function openLogin() {
+  document.getElementById("login-modal").classList.add("show");
+}
+
+function closeLogin() {
+  document.getElementById("login-modal").classList.remove("show");
+}
+
+function demoLogin() {
+  const login = document.getElementById("login-input").value.trim();
+  const password = document.getElementById("password-input").value.trim();
+
+  if (!login || !password) {
+    notify("Заполни логин и пароль.");
+    return;
+  }
+
+  // Только демонстрация. Не является настоящей авторизацией.
+  const role = login.toLowerCase() === "teacher"
+    ? "teacher"
+    : "student";
+
+  currentUser = {
+    login: login,
+    role: role
+  };
+
+  closeLogin();
+  updateAccount();
+
+  if (role === "teacher") {
+    showPage("teacher");
+    notify("Демонстрационный вход учителя.");
+  } else {
+    showPage("student");
+    notify("Демонстрационный вход ученика.");
+  }
+}
+
+function updateAccount() {
+  if (!currentUser) return;
+
+  document.getElementById("account-name").textContent =
+    currentUser.login;
+
+  document.getElementById("account-role").textContent =
+    "Роль: " +
+    (currentUser.role === "teacher" ? "Учитель" : "Ученик");
+
+  document.getElementById("account-login").textContent =
+    "Логин: " + currentUser.login;
+}
+
+function openAccount() {
+  if (!currentUser) {
+    openLogin();
+    return;
+  }
+
+  updateAccount();
+  showPage("account");
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById("login-input").value = "";
+  document.getElementById("password-input").value = "";
+
+  showPage("home");
+  notify("Вы вышли из демонстрационного аккаунта.");
+}
+
+function openTopic(topic) {
+  currentTopic = topic;
+
+  document.getElementById("topic-title").textContent = topic;
+  document.getElementById("topic-detail").classList.remove("hidden");
+
+  document.getElementById("topic-detail").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function closeTopic() {
+  document.getElementById("topic-detail").classList.add("hidden");
+}
+
+function selectLevel(level) {
+  currentLevel = level;
+
+  const names = {
+    1: "Лёгкий",
+    2: "Средний",
+    3: "Сложный"
+  };
+
+  document.getElementById("level-message").textContent =
+    "Выбран уровень: " + names[level] +
+    ". Можно начать тренировку.";
+
+  notify("Уровень " + level + " выбран.");
+
+  document.getElementById("quiz-topic").textContent = currentTopic;
+  document.getElementById("quiz-level").textContent =
+    "Уровень " + level;
+
+  selectedAnswer = null;
+
+  document.querySelectorAll(".quiz-option").forEach(button => {
+    button.classList.remove("selected");
+  });
+
+  document.getElementById("quiz-result").textContent = "";
+
+  showPage("quiz");
+}
+
+function chooseAnswer(button) {
+  document.querySelectorAll(".quiz-option").forEach(option => {
+    option.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+  selectedAnswer = button.textContent.trim();
+}
+
+function checkAnswer() {
+  const result = document.getElementById("quiz-result");
+
+  if (!selectedAnswer) {
+    result.textContent = "Сначала выбери вариант ответа.";
+    result.style.color = "#d97706";
+    return;
+  }
+
+  if (selectedAnswer.startsWith("B.")) {
+    result.textContent = "Правильно! Отличная работа!";
+    result.style.color = "#16845b";
+  } else {
+    result.textContent = "Пока неверно. Попробуй ещё раз.";
+    result.style.color = "#d94848";
+  }
+}
+
+function showTeacherTab(tab) {
+  const tabs = ["overview", "students", "assignments", "tests"];
+
+  tabs.forEach(name => {
+    const element = document.getElementById("teacher-" + name);
+    if (element) element.classList.add("hidden");
+  });
+
+  const selected = document.getElementById("teacher-" + tab);
+
+  if (selected) {
+    selected.classList.remove("hidden");
+  }
+}
+
+const translations = {
+  ru: {
+    home: "Главная",
+    topics: "Темы",
+    student: "Ученик",
+    teacher: "Учитель",
+    login: "Войти",
+    start: "Начать обучение →"
+  },
+  az: {
+    home: "Ana səhifə",
+    topics: "Mövzular",
+    student: "Şagird",
+    teacher: "Müəllim",
+    login: "Daxil ol",
+    start: "Təhsilə başla →"
+  }
+};
+
+function changeLanguage() {
+  const lang = document.getElementById("language").value;
+  const words = translations[lang];
+
+  const links = document.querySelectorAll("nav a");
+
+  if (links.length >= 4) {
+    links[0].textContent = words.home;
+    links[1].textContent = words.topics;
+    links[2].textContent = words.student;
+    links[3].textContent = words.teacher;
+  }
+
+  document.querySelector(".header-actions .btn").textContent =
+    words.login;
+
+  document.querySelector(".hero-buttons .btn").textContent =
+    words.start;
+
+  notify(lang === "az"
+    ? "Dil Azərbaycan dilinə dəyişdirildi."
+    : "Язык изменён на русский.");
+}
+
+// Закрытие окна входа при нажатии вне него
+document.getElementById("login-modal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeLogin();
+  }
+});
+
+// Начальная страница
+showPage("home");
+</script>
+
+<footer>
+  <div class="logo" style="justify-content:center;margin-bottom:12px">
+    <div class="logo-mark">π</div>
+    HIPOTEZ
+  </div>
+  <p>Образование. Развитие. Результат.</p>
+  <p>© 2026 HIPOTEZ. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
